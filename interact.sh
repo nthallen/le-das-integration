@@ -51,6 +51,7 @@ function Launch {
 
 rm -rf /var/run/linkeng/${Experiment}*
 rm -f $Experiment.log
+rm -rf LOG
 memoname=/var/run/linkeng/$Experiment/memo
 # ls -l $memoname
 [ -e $memoname ] || {
@@ -59,9 +60,10 @@ memoname=/var/run/linkeng/$Experiment/memo
   waitfor $memoname 2 || nl_error "Memo launch failed"
 }
 
-#Launch tm_bfr cygstart mintty gdb bfr
+# Launch tm_bfr cygstart mintty gdb bfr
 Launch tm_bfr bfr -v
-Launch - cygstart mintty gdb lgr
+# Launch - cygstart mintty gdb lgr
+Launch - lgr
 # Launch tm_gen cygstart mintty gdb ./Bootstrapcol
 Launch tm_gen ./Bootstrapcol
 Launch cmd ./Bootstrapsrvr -v
