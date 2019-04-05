@@ -1,0 +1,31 @@
+
+--------Frame Statistics-----------
+Major Frame: 1 minor frames, 1 Hz
+Minor Frame: 2023 bytes, 1 Hz
+Effective Frame Dimensions:
+  1 Rows 2023 Columns
+  1 rows/sec
+  16184 bits/sec
+  Data:  16152 bits/sec  100 %
+  Synch: 32 bits/sec  0 %
+  Empty: 0 bits/sec  0 %
+-------End of Frame Statistics-----
+
+
+--------PCM Definition-------------
+1/1 Hz 2 bytes Datum MFCtr (1,0,0,2)
+1/1 Hz 2018 bytes Group BMM_SIM (1,0,2,2018)
+1/1 Hz 2000 bytes Member Padding (1,0,2,2000)
+1/1 Hz 2 bytes Member V50B_I (1,0,2002,2)
+1/1 Hz 2 bytes Member V50A_I (1,0,2004,2)
+1/1 Hz 2 bytes Member V28_I (1,0,2006,2)
+1/1 Hz 2 bytes Member V50B_V2 (1,0,2008,2)
+1/1 Hz 2 bytes Member V50B_V1 (1,0,2010,2)
+1/1 Hz 2 bytes Member V50A_V2 (1,0,2012,2)
+1/1 Hz 2 bytes Member V50A_V1 (1,0,2014,2)
+1/1 Hz 2 bytes Member V28_V2 (1,0,2016,2)
+1/1 Hz 2 bytes Member V28_V1 (1,0,2018,2)
+1/1 Hz 1 bytes Datum Flag (1,0,2020,1)
+1/1 Hz 2 bytes Datum Synch (1,0,2021,2)
+-------End of PCM Definition-------
+

@@ -1,0 +1,9 @@
+LOG
+Bootstrap.log
+*.stackdump
+tm.dac
+*.exe
+*.o
+*oui.cc
+Bootstrapcmd.cc
+Bootstrapcol.cc
