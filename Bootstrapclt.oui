@@ -1,7 +1,6 @@
 <package> Bootstrapclt
 <include> "dasio/appid.h"
 <include> cmd_writer
-<include> nctable
 <include> msg oui
 
 <def>
