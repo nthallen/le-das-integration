@@ -11,6 +11,13 @@ Bootstrapsrvroui.o
 Bootstrapcltnc.o
 Bootstrapcltncoui.cc
 Bootstrapcltncoui.o
+Bootstrapengext.cdf
+Bootstrapengextcdf.oui
+Bootstrapengextcdf.tmc
+Bootstrapengext.cc
+Bootstrapengextoui.cc
+Bootstrapengext.o
+Bootstrapengextoui.o
 *.err
 *.o
 *.exe
@@ -19,3 +26,4 @@ Makefile
 Bootstrapcol
 Bootstrapsrvr
 Bootstrapcltnc
+Bootstrapengext
