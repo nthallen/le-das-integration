@@ -1,6 +1,0 @@
-<package> Bootstrapcol
-<include> msg oui
-<include> "dasio/appid.h"
-<defs>
-  DAS_IO::AppID_t DAS_IO::AppID("col","Bootstrap collection","V1.0");
-

@@ -1,6 +1,0 @@
-<package> Bootstrapcmd
-<include> "dasio/appid.h"
-<include> msg oui
-
-<def>
-  DAS_IO::AppID_t DAS_IO::AppID("srvr", "Bootstrap Command Server", "V1.0");
