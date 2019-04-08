@@ -1,0 +1,14 @@
+HEADER Bootstrap Instrument
+MNEMONIC bs
+HOMEDIR BS_DATA_DIR
+
+   1 V28_V1 Power Volts_28
+   1 V28_V2 Power Volts_28
+   1 V50A_V1 Power Volts_50
+   1 V50A_V2 Power Volts_50
+   1 V50B_V1 Power Volts_50
+   1 V50B_V2 Power Volts_50
+   1 V28_I Power Current
+   1 V50A_I Power Current
+   1 V50B_I Power Current
+#  1 Padding[1000];
