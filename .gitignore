@@ -1,3 +1,8 @@
+Bootstrapcol.cc
+tm.dac
+Bootstrapcoloui.cc
+Bootstrapcol.o
+Bootstrapcoloui.o
 Bootstrapcmd.cc
 Bootstrapcmd.dat
 Bootstrapsrvr.o
@@ -6,15 +11,11 @@ Bootstrapsrvroui.o
 Bootstrapcltnc.o
 Bootstrapcltncoui.cc
 Bootstrapcltncoui.o
-Bootstrapcol.cc
-tm.dac
-Bootstrapcoloui.cc
-Bootstrapcol.o
-Bootstrapcoloui.o
 *.err
 *.o
 *.exe
 *.stackdump
+Makefile
+Bootstrapcol
 Bootstrapsrvr
 Bootstrapcltnc
-Bootstrapcol

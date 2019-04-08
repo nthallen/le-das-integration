@@ -1,9 +1,10 @@
 tmcbase = base.tmc
-colbase = Bootstrapcol.oui
+colbase =
 cmdbase = root.cmd
 
 TGTDIR = ..
 IGNORE = "*.o" "*.exe" "*.stackdump" Makefile
 
-Bootstrapsrvr : Bootstrapsrvr.oui
-Bootstrapclt : Bootstrapclt.oui
+Bootstrapcol :
+Bootstrapsrvr :
+Bootstrapclt :

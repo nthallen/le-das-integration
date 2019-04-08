@@ -1,7 +1,0 @@
-<package> Bootstrapclt
-<include> "dasio/appid.h"
-<include> cmd_writer
-<include> msg oui
-
-<def>
-  DAS_IO::AppID_t DAS_IO::AppID("Clt", "Bootstrap Client", "V1.0");
