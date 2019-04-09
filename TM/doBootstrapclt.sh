@@ -1,2 +1,3 @@
 #! /bin/bash
-./Bootstrapclt `tty` 
+tty=`tty`
+Bootstrapcltnc `tty` 

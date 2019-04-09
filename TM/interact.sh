@@ -8,6 +8,11 @@ export Experiment=Bootstrap
 launch_error=''
 VERBOSE=''
 
+[ -f VERSION ] || nl_error Missing VERSION File
+VERSION=`cat VERSION`
+[ -d "bin/$VERSION" ] || nl_error "Missing bin directory bin/$VERSION"
+export PATH=bin/$VERSION:$PATH
+
 function waitfor {
   name=$1
   duration=$2
@@ -63,8 +68,9 @@ memoname=/var/run/linkeng/$Experiment/memo
 # Launch tm_bfr cygstart mintty gdb bfr
 Launch tm_bfr bfr -v
 # Launch - cygstart mintty gdb lgr
-Launch - lgr
+Launch -TMC- lgr
+Launch -TMC- Bootstrapengext
 # Launch tm_gen cygstart mintty gdb ./Bootstrapcol
-Launch tm_gen ./Bootstrapcol
-Launch cmd ./Bootstrapsrvr -v
-cygstart mintty ./doBootstrapclt.sh
+Launch tm_gen Bootstrapcol
+Launch cmd Bootstrapsrvr -v
+cygstart mintty doBootstrapclt.sh
