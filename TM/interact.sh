@@ -71,7 +71,8 @@ Launch tm_bfr bfr -v
 Launch -TMC- lgr
 # Launch - cygstart mintty gdb Bootstrapengext
 Launch -TMC- Bootstrapengext
+cygstart mintty cyg_nc.sh Bootstrapdispnc -a
 # Launch tm_gen cygstart mintty gdb ./Bootstrapcol
-Launch tm_gen Bootstrapcol
+Launch tm_gen Bootstrapcol -v
 Launch cmd Bootstrapsrvr -v
-cygstart mintty doBootstrapclt.sh
+cygstart mintty cyg_nc.sh Bootstrapcltnc

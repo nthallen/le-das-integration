@@ -1,13 +1,18 @@
-Table {
+Volts {
   HBox { +-; Title: Volts; -+ };
 
-  V28_V1: (V28_V1,6) V;
-  V28_V2: (V28_V2,6) V;
+  V28_V1:  (V28_V1,6)  V;
+  V28_V2:  (V28_V2,6)  V;
   V50A_V1: (V50A_V1,6) V;
   V50A_V2: (V50A_V2,6) V;
   V50B_V1: (V50B_V1,6) V;
   V50B_V2: (V50B_V2,6) V;
-  V28_I: (V28_I,6) V;
-  V50A_I: (V50A_I,6) V;
-  V50B_I: (V50B_I,6) V;
+  V28_I:   (V28_I,6)   V;
+  V50A_I:  (V50A_I,6)  V;
+  V50B_I:  (V50B_I,6)  V;
+}
+
+Table {
+  HBox { |+; [Volts]; |+ };
+  -;
 }

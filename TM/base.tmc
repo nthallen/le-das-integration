@@ -56,5 +56,5 @@ group BMM_SIM (V28_V1, V28_V2, V50A_V1, V50A_V2, V50B_V1, V50B_V2,
   V50A_V1 = 32000 - perturb;
   V50B_V2 = 52466 - perturb;
   for (i = 0; i < 1000; ++i) Padding[i] = i;
-  perturb = (perturb+1) % 7;
+  perturb = (perturb+17) % 300;
 }
