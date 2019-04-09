@@ -1,0 +1,17 @@
+Table {
+  HBox { +-; Title: Volts; -+ };
+
+  V28_V1: (V28_V1) V;
+  V28_V2: (V28_V2) V;
+  V50A_V1: (V50A_V1) V;
+  V50A_V2: (V50A_V2) V;
+  V50B_V1: (V50B_V1) V;
+  V50B_V2: (V50B_V2) V;
+  V28_I: (V28_I) V;
+  V50A_I: (V50A_I) V;
+  V50B_I: (V50B_I) V;
+  
+  (datum,3);
+  (datum,50,2);
+  HBox { Table { "one" (datum,4+1) "two" "three"; };};
+}

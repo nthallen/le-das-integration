@@ -11,5 +11,6 @@ IDISTRIB = interact.sh
 Bootstrapcol :
 Bootstrapsrvr :
 Bootstrapclt :
+Bootstrapdisp : display.tbl
 %%
 CXXFLAGS=-g
