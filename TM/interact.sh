@@ -69,6 +69,7 @@ memoname=/var/run/linkeng/$Experiment/memo
 Launch tm_bfr bfr -v
 # Launch - cygstart mintty gdb lgr
 Launch -TMC- lgr
+# Launch - cygstart mintty gdb Bootstrapengext
 Launch -TMC- Bootstrapengext
 # Launch tm_gen cygstart mintty gdb ./Bootstrapcol
 Launch tm_gen Bootstrapcol
