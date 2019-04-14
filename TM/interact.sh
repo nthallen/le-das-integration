@@ -55,13 +55,13 @@ function Launch {
 }
 
 rm -rf /var/run/linkeng/${Experiment}*
-rm -f $Experiment.log
+rm -f $Experiment.log *.stackdump
 rm -rf LOG
 memoname=/var/run/linkeng/$Experiment/memo
 # ls -l $memoname
 [ -e $memoname ] || {
   echo "Launching memo for $memoname"
-  cygstart mintty memo -o Bootstrap.log -l0 -V -v
+  cygstart mintty memo -o Bootstrap.log -l2 -V
   waitfor $memoname 2 || nl_error "Memo launch failed"
 }
 
@@ -72,7 +72,8 @@ Launch -TMC- lgr
 # Launch - cygstart mintty gdb Bootstrapengext
 Launch -TMC- Bootstrapengext
 cygstart mintty cyg_nc.sh Bootstrapdispnc -a
-# Launch tm_gen cygstart mintty gdb ./Bootstrapcol
+# Launch tm_gen cygstart mintty gdb Bootstrapcol
 Launch tm_gen Bootstrapcol -v
+# Launch cmd cygstart mintty gdb Bootstrapsrvr
 Launch cmd Bootstrapsrvr -v
 cygstart mintty cyg_nc.sh Bootstrapcltnc

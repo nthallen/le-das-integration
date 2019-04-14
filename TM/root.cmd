@@ -25,6 +25,7 @@
 	: Log %s ( Enter String to Log to Memo ) * {}
 	;
 &tm_cmd
-	: Start * { if_tm_gen.Turf( "TMc\n" ); }
-	: Single Step * { if_tm_gen.Turf( "TMs\n" ); }
+	: Start * { if_tm_gen.Turf("TMc\n"); }
+	: Single Step * { if_tm_gen.Turf("TMs\n"); }
+        : Stop * { if_tm_gen.Turf("TMe\n"); }
 	;
