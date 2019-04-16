@@ -1,6 +1,7 @@
 tmcbase = base.tmc
+tmcbase = /usr/local/share/linkeng/flttime.tmc
 colbase =
-cmdbase = root.cmd
+# cmdbase = root.cmd
 genuibase = Bootstrap.genui
 
 TGTDIR = $(PWD)/../..

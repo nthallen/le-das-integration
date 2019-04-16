@@ -12,7 +12,13 @@ Volts {
   V50B_I:  (V50B_I,6)  V;
 }
 
+Status {
+  HBox { +-; Title: Status; -+ };
+  MFCtr: (MFCtr,5);
+    (flttime,9);
+}
+
 Table {
-  HBox { |+; [Volts]; |+ };
+  HBox { |+; { [Volts]; [Status] }; |+ };
   -;
 }

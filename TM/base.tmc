@@ -1,8 +1,8 @@
 %{
-  unsigned char receive_data;
+  uint8_t receive_data;
 %}
-TM typedef unsigned char UCHAR { text "%3u"; }
-TM typedef unsigned short UINT { text "%5u"; }
+TM typedef uint8_t UCHAR { text "%3u"; }
+TM typedef uint16_t UINT { text "%5u"; }
 TM 1 Hz UCHAR Flag;
 collect Flag = Flag + 1;
 TM MAXCOLS = 2500;
@@ -20,16 +20,16 @@ collect RD_stat {
 TM 1 Hz UINT Synch, MFCtr;
 
 TM typedef double BMM_VOLTS { text "%6.2lf"; }
-TM typedef unsigned short BMM_V_t { convert BMM_VOLTS; text "%6.2lf"; }
+TM typedef uint16_t BMM_V_t { convert BMM_VOLTS; text "%6.2lf"; }
 calibration (BMM_V_t, BMM_VOLTS) { 0, 0, 16, 0.025 }
-TM typedef unsigned short BMM_ADIN_28V_t { convert BMM_VOLTS; text "%6.2lf"; }
+TM typedef uint16_t BMM_ADIN_28V_t { convert BMM_VOLTS; text "%6.2lf"; }
 calibration (BMM_ADIN_28V_t, BMM_VOLTS) { 0, 0, 1, 4.90625e-4 }
-TM typedef unsigned short BMM_ADIN_50V_t { convert BMM_VOLTS; text "%6.2lf"; }
+TM typedef uint16_t BMM_ADIN_50V_t { convert BMM_VOLTS; text "%6.2lf"; }
 calibration (BMM_ADIN_50V_t, BMM_VOLTS) { 0, 0, 1, 9.53125e-4 }
 TM typedef double BMM_AMPS { text "%6.3lf"; }
-TM typedef unsigned short BMM_28V_I_t { convert BMM_AMPS; text "%6.3lf"; }
+TM typedef uint16_t BMM_28V_I_t { convert BMM_AMPS; text "%6.3lf"; }
 calibration (BMM_28V_I_t, BMM_AMPS) { 0, 0, 1, 1.7857e-4 }
-TM typedef unsigned short BMM_50V_I_t { convert BMM_AMPS; text "%6.3lf"; }
+TM typedef uint16_t BMM_50V_I_t { convert BMM_AMPS; text "%6.3lf"; }
 calibration (BMM_50V_I_t, BMM_AMPS) { 0, 0, 1, 4.1667e-4 }
 
 TM 1 Hz BMM_V_t V28_V1;
