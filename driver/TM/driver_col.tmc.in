@@ -1,0 +1,4 @@
+%{
+  #include "driver.h"
+  driver_data_t Driver;
+%}

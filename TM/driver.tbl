@@ -1,0 +1,6 @@
+driver {
+  HBox { +-; Driver; -+ };
+  Drv_A:     (Drv_A,5);
+  Drv_B:     (Drv_B,5);
+  Drv_stale: (Drv_stale,3);
+}

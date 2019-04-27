@@ -1,0 +1,14 @@
+TM typedef uint16_t driver_int_t { text "%5u"; }
+TM typedef uint8_t driver_stale_t { text "%3u"; }
+
+TM "Receive" Driver 1;
+TM 1 Hz driver_int_t Drv_A;
+TM 1 Hz driver_int_t Drv_B;
+TM 1 Hz driver_stale_t Drv_stale;
+
+group driver (Drv_A, Drv_B, Drv_stale) {
+  Drv_A = Driver.A;
+  Drv_B = Driver.B;
+  Drv_stale = Driver_obj->Stale(255);
+  Driver_obj->synch();
+}

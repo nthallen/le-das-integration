@@ -1,3 +1,5 @@
+Input "driver.tbl";
+
 Volts {
   HBox { +-; Title: Volts; -+ };
 
@@ -19,6 +21,12 @@ Status {
 }
 
 Table {
-  HBox { |+; { [Volts]; [Status] }; |+ };
+  HBox {
+    |+;
+    { [Volts];
+      [driver];
+      [Status]
+    };
+    |+ };
   -;
 }

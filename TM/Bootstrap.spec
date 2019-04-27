@@ -4,6 +4,8 @@ colbase =
 # cmdbase = root.cmd
 genuibase = Bootstrap.genui
 
+Module driver
+
 TGTDIR = $(PWD)/../..
 IGNORE = "*.o" "*.exe" "*.stackdump" Makefile
 SCRIPT = doBootstrapclt.sh cyg_nc.sh
