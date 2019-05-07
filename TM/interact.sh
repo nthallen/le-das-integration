@@ -85,7 +85,7 @@ function Dispatch_nc {
 
 rm -rf /var/run/linkeng/${Experiment}*
 rm -f $Experiment.log *.stackdump
-rm -rf LOG
+# rm -rf LOG
 memoname=/var/run/linkeng/$Experiment/memo
 # ls -l $memoname
 [ -e $memoname ] || {
@@ -95,7 +95,7 @@ memoname=/var/run/linkeng/$Experiment/memo
 }
 
 Launch      tm_bfr bfr -v
-Launch      -TMC-  lgr
+Launch      -TMC-  lgr -N `mlf_find LOG`
 Launch      -TMC-  Bootstrapengext
 Dispatch_nc -      Bootstrapdispnc -a
 Launch      tm_gen Bootstrapcol -v
