@@ -25,7 +25,8 @@ Table {
     |+;
     { [Volts];
       [driver];
-      [Status]
+      [Status];
+      [tmdf_drv]
     };
     |+ };
   -;
