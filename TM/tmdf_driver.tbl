@@ -1,5 +1,5 @@
 tmdf_drv {
   HBox { +-; TMDF; -+ };
-  tmdf_usage: (tmdf_usage,3);
+  tmdf_usage: (tmdf_usage,3) %;
   tmdf_stale: (tmdf_stale,3);
 }

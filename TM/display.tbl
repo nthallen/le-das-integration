@@ -1,4 +1,5 @@
 Input "driver.tbl";
+Input "tmdf_driver.tbl";
 
 Volts {
   HBox { +-; Title: Volts; -+ };

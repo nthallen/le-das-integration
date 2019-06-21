@@ -1,10 +1,12 @@
 TM typedef uint8_t tmdf_usage_t { text "%3u"; }
 TM typedef uint8_t tmdf_stale_t { text "%3u"; }
 
+TM "Receive" tmdf_driver 1;
 TM 1 Hz tmdf_usage_t tmdf_usage;
 TM 1 Hz tmdf_stale_t tmdf_stale;
 
 group tmdf_drv (tmdf_usage, tmdf_stale) {
-  tmdf_usage = 
-  tmdf_stale = 
+  tmdf_usage = tmdf_driver.usage;
+  tmdf_stale = tmdf_driver_obj->Stale(255);
+  tmdf_driver_obj->synch();
 }
