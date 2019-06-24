@@ -22,13 +22,7 @@ Status {
 }
 
 Table {
-  HBox {
-    |+;
-    { [Volts];
-      [driver];
-      [Status];
-      [tmdf_drv]
-    };
-    |+ };
+  HBox { |+; [Volts]; |; [driver]; |+ };
+  HBox { |+; [Status]; |; [tmdf_drv]; |+ };
   -;
 }

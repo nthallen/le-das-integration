@@ -1,4 +1,4 @@
-TM typedef uint8_t tmdf_usage_t { text "%3u"; }
+TM typedef uint8_t tmdf_usage_t { text "%5.2lf"; }
 TM typedef uint8_t tmdf_stale_t { text "%3u"; }
 
 TM "Receive" tmdf_driver 1;
