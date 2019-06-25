@@ -1,10 +1,10 @@
 tmcbase = base.tmc
-tmcbase = tmdf_driver.tmc
+tmcbase = tmdf.tmc
 tmcbase = /usr/local/share/linkeng/flttime.tmc
-colbase = tmdf_driver_col.tmc
+colbase = tmdf_col.tmc
 # cmdbase = root.cmd
 genuibase = Bootstrap.genui
-genuibase = tmdf_driver.genui
+genuibase = tmdf.genui
 
 Module driver
 

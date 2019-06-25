@@ -1,5 +1,5 @@
 Input "driver.tbl";
-Input "tmdf_driver.tbl";
+Input "tmdf.tbl";
 
 Volts {
   HBox { +-; Title: Volts; -+ };
@@ -23,6 +23,6 @@ Status {
 
 Table {
   HBox { |+; [Volts]; |; [driver]; |+ };
-  HBox { |+; [Status]; |; [tmdf_drv]; |+ };
+  HBox { |+; [Status]; |; [tmdf]; |+ };
   -;
 }

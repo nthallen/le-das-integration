@@ -1,4 +1,4 @@
 %{
   #include "tmdf.h"
-  TMDF_t tmdf_driver;
+  TMDF_t tmdf;
 %}

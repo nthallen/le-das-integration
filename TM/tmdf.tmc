@@ -3,12 +3,12 @@ TM typedef double tmdf_pct { text "%6.2lf"; }
 TM typedef uint16_t tmdf_usage_t { text "%6.2lf"; convert tmdf_pct; }
 calibration (tmdf_usage_t, tmdf_pct) { 0, 0, 65534, 100, 65535, -1 } 
 
-TM "Receive" tmdf_driver 1;
+TM "Receive" tmdf 1;
 TM 1 Hz tmdf_usage_t tmdf_usage;
 TM 1 Hz tmdf_stale_t tmdf_stale;
 
-group tmdf_drv (tmdf_usage, tmdf_stale) {
-  tmdf_usage = tmdf_driver.usage;
-  tmdf_stale = tmdf_driver_obj->Stale(255);
-  tmdf_driver_obj->synch();
+group tmdf (tmdf_usage, tmdf_stale) {
+  tmdf_usage = tmdf.usage;
+  tmdf_stale = tmdf_obj->Stale(255);
+  tmdf_obj->synch();
 }
