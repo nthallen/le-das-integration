@@ -1,5 +1,7 @@
-TM typedef uint8_t tmdf_usage_t { text "%5.2lf"; }
 TM typedef uint8_t tmdf_stale_t { text "%3u"; }
+TM typedef double tmdf_pct { text "%6.2lf"; }
+TM typedef uint16_t tmdf_usage_t { text "%6.2lf"; convert tmdf_pct; }
+calibration (tmdf_usage_t, tmdf_pct) { 0, 0, 65534, 100, 65535, -1 } 
 
 TM "Receive" tmdf_driver 1;
 TM 1 Hz tmdf_usage_t tmdf_usage;

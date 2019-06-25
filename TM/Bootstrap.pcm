@@ -1,12 +1,12 @@
 
 --------Frame Statistics-----------
 Major Frame: 1 minor frames, 1 Hz
-Minor Frame: 2030 bytes, 1 Hz
+Minor Frame: 2031 bytes, 1 Hz
 Effective Frame Dimensions:
-  1 Rows 2030 Columns
+  1 Rows 2031 Columns
   1 rows/sec
-  16240 bits/sec
-  Data:  16208 bits/sec  100 %
+  16248 bits/sec
+  Data:  16216 bits/sec  100 %
   Synch: 32 bits/sec  0 %
   Empty: 0 bits/sec  0 %
 -------End of Frame Statistics-----
@@ -29,10 +29,10 @@ Effective Frame Dimensions:
 1/1 Hz 1 bytes Member Drv_stale (1,0,2020,1)
 1/1 Hz 2 bytes Member Drv_B (1,0,2021,2)
 1/1 Hz 2 bytes Member Drv_A (1,0,2023,2)
-1/1 Hz 2 bytes Group tmdf_drv (1,0,2025,2)
+1/1 Hz 3 bytes Group tmdf_drv (1,0,2025,3)
 1/1 Hz 1 bytes Member tmdf_stale (1,0,2025,1)
-1/1 Hz 1 bytes Member tmdf_usage (1,0,2026,1)
-1/1 Hz 1 bytes Datum Flag (1,0,2027,1)
-1/1 Hz 2 bytes Datum Synch (1,0,2028,2)
+1/1 Hz 2 bytes Member tmdf_usage (1,0,2026,2)
+1/1 Hz 1 bytes Datum Flag (1,0,2028,1)
+1/1 Hz 2 bytes Datum Synch (1,0,2029,2)
 -------End of PCM Definition-------
 
