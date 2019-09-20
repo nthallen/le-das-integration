@@ -1,4 +1,5 @@
 #! /bin/bash
+
 function nl_error {
   echo "interact: $*" >&2
   exit 1
@@ -6,12 +7,17 @@ function nl_error {
 
 export Experiment=Bootstrap
 launch_error=''
-VERBOSE=''
+export VERBOSE='y'
 
 [ -f VERSION ] || nl_error Missing VERSION File
 VERSION=`cat VERSION`
 [ -d "bin/$VERSION" ] || nl_error "Missing bin directory bin/$VERSION"
 export PATH=bin/$VERSION:$PATH
+
+tmux set-environment Experiment $Experiment
+tmux set-environment PATH $PATH
+
+echo $Experiment
 
 function waitfor {
   name=$1
@@ -90,16 +96,33 @@ memoname=/var/run/linkeng/$Experiment/memo
 # ls -l $memoname
 [ -e $memoname ] || {
   echo "Launching memo for $memoname"
-  cygstart mintty memo -o Bootstrap.log -l2 -V
-  waitfor $memoname 2 || nl_error "Memo launch failed"
+  /usr/local/bin/memo -o Bootstrap.log -l3 -v &
+  waitfor $memoname 2 1 || nl_error "Memo launch failed"
+  echo "Memo has launched."
 }
 
 Launch      tm_bfr bfr -v
-Launch      -TMC-  lgr -N `mlf_find LOG`
-Launch      -TMC-  Bootstrapengext
-Dispatch_nc -      Bootstrapdispnc -a
+Launch      -TMC-  lgr -N `mlf_find LOG` -n lgr
+Launch      -TMC-  Bootstrapengext -n engext
+msg "[DEBUG] Dispatch_nc: Bootstrapdispnc"
+#echo Experiment=$Experiment
+#echo PATH=$PATH
+
+#for var in $(tmux show-environment | grep -v "^-"); do eval "export $var"; done;
+#tmux split-window cyg_nc.sh Bootstrapdispnc -a
+tmux new-window -n ancillary-window cyg_nc.sh Bootstrapdispnc -a -n disp
+#Bootstrapdispnc is bonked if you move it, which is happening because splitting the window after this line causes irreparable bork
+
 Launch      tm_gen Bootstrapcol -v
 Launch      cmd    Bootstrapsrvr -v
 Launch      -      driver -v
 Launch      -      tmdf
-Dispatch_nc -      Bootstrapcltnc
+#tmux select-window -t ancillary-window
+#tmux split-window -v cyg_nc.sh tmdf
+tmux select-window -t ancillary-window
+tmux split-window -t 0 -h less +F Bootstrap.log
+msg "[DEBUG] Dispatch_nc: Bootstrapcltnc"
+#echo Experiment=$Experiment
+tmux split-window -t 1 -v cyg_nc.sh Bootstrapcltnc
+#tmux split-window -t 0 -v bash cyg_nc.sh Bootstrapcltnc
+#tmux split-window -t 1 -v cyg_nc.sh Bootstrapcltnc
