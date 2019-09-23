@@ -28,8 +28,8 @@ bool driver_interface::tm_sync() {
 int main(int argc, char **argv) {
   oui_init_options(argc, argv);
   Loop ELoop;
-  TM_data_sndr *TM = new TM_data_sndr("TM", "Driver",
-    (const char *)&Driver, sizeof(Driver));
+  TM_data_sndr *TM = new TM_data_sndr("TM", 0, "Driver",
+    (void *)&Driver, sizeof(Driver));
   TM->connect();
   ELoop.add_child(TM);
   driver_interface *drv = new driver_interface(&Driver);
