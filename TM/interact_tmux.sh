@@ -14,10 +14,14 @@ VERSION=`cat VERSION`
 [ -d "bin/$VERSION" ] || nl_error "Missing bin directory bin/$VERSION"
 export PATH=bin/$VERSION:$PATH
 
+export TMBINDIR=bin/$VERSION
+
 tmux set-environment Experiment $Experiment
+tmux set-environment TMBINDIR bin/$VERSION
 tmux set-environment PATH $PATH
 
-echo $Experiment
+echo Experiment = $Experiment
+echo TMBINDIR = $TMBINDIR
 
 function waitfor {
   name=$1
@@ -96,7 +100,7 @@ memoname=/var/run/linkeng/$Experiment/memo
 # ls -l $memoname
 [ -e $memoname ] || {
   echo "Launching memo for $memoname"
-  /usr/local/bin/memo -o Bootstrap.log -l3 -v &
+  /usr/local/bin/memo -o Bootstrap.log -l8 -v &
   waitfor $memoname 2 1 || nl_error "Memo launch failed"
   echo "Memo has launched."
 }
@@ -105,13 +109,8 @@ Launch      tm_bfr bfr -v
 Launch      -TMC-  lgr -N `mlf_find LOG` -n lgr
 Launch      -TMC-  Bootstrapengext -n engext
 msg "[DEBUG] Dispatch_nc: Bootstrapdispnc"
-#echo Experiment=$Experiment
-#echo PATH=$PATH
 
-#for var in $(tmux show-environment | grep -v "^-"); do eval "export $var"; done;
-#tmux split-window cyg_nc.sh Bootstrapdispnc -a
-tmux new-window -n ancillary-window cyg_nc.sh Bootstrapdispnc -a -n disp
-#Bootstrapdispnc is bonked if you move it, which is happening because splitting the window after this line causes irreparable bork
+tmux new-window -n ancillary-window cyg_nc.sh Bootstrapdispnc -a -n disp -v
 
 Launch      tm_gen Bootstrapcol -v
 Launch      cmd    Bootstrapsrvr -v
