@@ -12,8 +12,7 @@ mode (default) {
   CPPFLAGS = -I @MODDIR@/..
   %%
 .PHONY : all-driver clean-driver
-all-dist : all-driver
-all-driver :
+@MODDIR@/../driver :
 	cd @MODDIR@/.. && make
 clean-dist : clean-driver
 clean-driver :
