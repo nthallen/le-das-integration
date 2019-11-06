@@ -2,6 +2,11 @@
   uint8_t receive_data;
 %}
 TM typedef uint8_t UCHAR { text "%3u"; }
+TM typedef char CHAR_t_old { text "%3u"; }
+TM typedef int INT_t_old { text "%3u"; }
+TM typedef long LONG_t_old { text "%3u"; }
+TM typedef short SHORT_t_old { text "%3u"; }
+TM typedef unsigned UNSIGNED_t_old { text "%3u"; }
 TM typedef uint16_t UINT { text "%5u"; }
 TM 1 Hz UCHAR Flag;
 collect Flag = Flag + 1;

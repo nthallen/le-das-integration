@@ -76,8 +76,8 @@ function Debug {
   shift
   [ -n "$launch_error" ] && return 1
   [ -n "$VERBOSE" ] && msg "[DEBUG] Debug: $*"
-  program=$1
-  cygstart mintty gdb $program
+  #program=$1
+  gnome-terminal -- gdb --args $*
   if [ "$name" != "-" -a "$name" != "-TMC-" ]; then
     [ "${name#/}" = "$name" ] && name="/var/run/linkeng/$Experiment/$name"
     [ -n "$VERBOSE" ] &&
@@ -90,7 +90,7 @@ function Debug {
 function Dispatch_nc {
   [ "x$1" = "x-" ] && shift 1
   [ -n "$VERBOSE" ] && msg "[DEBUG] Dispatch_nc: $*"
-  cygstart mintty cyg_nc.sh $*
+  gnome-terminal -- cyg_nc.sh $* &
 }
 
 rm -rf /var/run/linkeng/${Experiment}*
@@ -105,23 +105,18 @@ memoname=/var/run/linkeng/$Experiment/memo
   echo "Memo has launched."
 }
 
-Launch      tm_bfr bfr -v
+Launch      tm_bfr bfr -s Both -v
 Launch      -TMC-  lgr -N `mlf_find LOG` -n lgr
 Launch      -TMC-  Bootstrapengext -n engext
 msg "[DEBUG] Dispatch_nc: Bootstrapdispnc"
 
-tmux new-window -n ancillary-window cyg_nc.sh Bootstrapdispnc -a -n disp -v
+tmux new-window -n ancillary-window cyg_nc.sh Bootstrapdispnc -a -t 127.0.0.1 -n disp -v
 
 Launch      tm_gen Bootstrapcol -v
-Launch      cmd    Bootstrapsrvr -v
+Launch      cmd    Bootstrapsrvr -s Both -v
 Launch      -      driver -v
 Launch      -      tmdf
-#tmux select-window -t ancillary-window
-#tmux split-window -v cyg_nc.sh tmdf
 tmux select-window -t ancillary-window
 tmux split-window -t 0 -h less +F Bootstrap.log
 msg "[DEBUG] Dispatch_nc: Bootstrapcltnc"
-#echo Experiment=$Experiment
-tmux split-window -t 1 -v cyg_nc.sh Bootstrapcltnc
-#tmux split-window -t 0 -v bash cyg_nc.sh Bootstrapcltnc
-#tmux split-window -t 1 -v cyg_nc.sh Bootstrapcltnc
+tmux split-window -t 1 -v cyg_nc.sh Bootstrapcltnc -C 127.0.0.1
