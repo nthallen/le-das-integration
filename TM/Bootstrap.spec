@@ -11,7 +11,7 @@ Module driver
 TGTDIR = $(PWD)/../..
 IGNORE = "*.o" "*.exe" "*.stackdump" Makefile
 SCRIPT = doBootstrapclt.sh cyg_nc.sh
-IDISTRIB = interact.sh cleanup.sh
+IDISTRIB = interact.sh cleanup.sh tmux_test.sh interact_tmux.sh
 DISTRIB = services
 
 Bootstrapcol :

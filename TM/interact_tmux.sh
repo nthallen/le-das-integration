@@ -110,13 +110,13 @@ Launch      -TMC-  lgr -N `mlf_find LOG` -n lgr
 Launch      -TMC-  Bootstrapengext -n engext
 msg "[DEBUG] Dispatch_nc: Bootstrapdispnc"
 
-tmux new-window -n ancillary-window cyg_nc.sh Bootstrapdispnc -a -t 127.0.0.1 -n disp -v
+tmux new-window -n ancillary-window 'cyg_nc.sh Bootstrapdispnc -a -t 127.0.0.1 -n disp -v'
 
 Launch      tm_gen Bootstrapcol -v
 Launch      cmd    Bootstrapsrvr -s Both -v
 Launch      -      driver -v
 Launch      -      tmdf
 tmux select-window -t ancillary-window
-tmux split-window -t 0 -h less +F Bootstrap.log
+tmux split-window -t 0 -h 'less +F Bootstrap.log'
 msg "[DEBUG] Dispatch_nc: Bootstrapcltnc"
-tmux split-window -t 1 -v cyg_nc.sh Bootstrapcltnc -C 127.0.0.1
+tmux split-window -t 1 -v 'cyg_nc.sh Bootstrapcltnc -C 127.0.0.1'
