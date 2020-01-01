@@ -7,7 +7,7 @@ function nl_error {
 
 export Experiment=Bootstrap
 launch_error=''
-export VERBOSE='y'
+export VERBOSE='n'
 
 [ -f VERSION ] || nl_error Missing VERSION File
 VERSION=`cat VERSION`
@@ -100,23 +100,22 @@ memoname=/var/run/linkeng/$Experiment/memo
 # ls -l $memoname
 [ -e $memoname ] || {
   echo "Launching memo for $memoname"
-  /usr/local/bin/memo -o Bootstrap.log -l8 -v &
+  /usr/local/bin/memo -o Bootstrap.log -l8 &
   waitfor $memoname 2 1 || nl_error "Memo launch failed"
   echo "Memo has launched."
 }
 
-Launch      tm_bfr bfr -s Both -v
+Launch      tm_bfr bfr -s Both
 Launch      -TMC-  lgr -N `mlf_find LOG` -n lgr
 Launch      -TMC-  Bootstrapengext -n engext
-msg "[DEBUG] Dispatch_nc: Bootstrapdispnc"
-
-tmux new-window -n ancillary-window 'cyg_nc.sh Bootstrapdispnc -a -t 127.0.0.1 -n disp -v'
-
-Launch      tm_gen Bootstrapcol -v
-Launch      cmd    Bootstrapsrvr -s Both -v
+Launch      tm_gen Bootstrapcol
+Launch      cmd    Bootstrapsrvr -s Both
 Launch      -      driver -v
 Launch      -      tmdf
-tmux select-window -t ancillary-window
-tmux split-window -t 0 -h 'less +F Bootstrap.log'
-msg "[DEBUG] Dispatch_nc: Bootstrapcltnc"
-tmux split-window -t 1 -v 'cyg_nc.sh Bootstrapcltnc -C 127.0.0.1'
+
+tmux new-window -a -t tmux-test:main-window -n ancillary-window 'cyg_nc.sh Bootstrapdispnc -a -t 127.0.0.1 -n disp'
+tmux split-window -t tmux-test:ancillary-window.0 -h 'less +F Bootstrap.log'
+tmux split-window -t tmux-test:ancillary-window.1 -v 'cyg_nc.sh Bootstrapcltnc -C 127.0.0.1'
+
+exec parent -qV
+
