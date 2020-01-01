@@ -9,7 +9,7 @@ mode (default) {
   genuibase = driver.genui
   - : driver.tbl:driver.tbl.in
   DISTRIB = @MODDIR@/../driver
-  CPPFLAGS = -I @MODDIR@/..
+  CPPFLAGS = -I$(AG_SRCDIR)@MODDIR@/..
   %%
 .PHONY : all-driver clean-driver
 @MODDIR@/../driver :
