@@ -2,7 +2,7 @@ tmcbase = base.tmc
 tmcbase = tmdf.tmc
 tmcbase = /usr/local/share/linkeng/flttime.tmc
 colbase = tmdf_col.tmc
-# cmdbase = root.cmd
+cmdbase = /usr/local/share/linkeng/getcon.cmd
 genuibase = Bootstrap.genui
 genuibase = tmdf.genui
 

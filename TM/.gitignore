@@ -5,6 +5,7 @@ Bootstrapcol.o
 Bootstrapcoloui.o
 Bootstrapcmd.cc
 Bootstrapcmd.dat
+Bootstrapcmd.h
 Bootstrapsrvr.o
 Bootstrapsrvroui.cc
 Bootstrapsrvroui.o
