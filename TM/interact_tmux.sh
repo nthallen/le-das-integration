@@ -100,7 +100,7 @@ memoname=/var/run/linkeng/$Experiment/memo
 # ls -l $memoname
 [ -e $memoname ] || {
   echo "Launching memo for $memoname"
-  /usr/local/bin/memo -o Bootstrap.log -l8 -v &
+  /usr/local/bin/memo -o Bootstrap.log -l8 &
   waitfor $memoname 2 1 || nl_error "Memo launch failed"
   echo "Memo has launched."
 }

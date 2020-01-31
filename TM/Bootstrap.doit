@@ -1,0 +1,8 @@
+display Bootstrapdisp
+
+client Bootstrapclt
+
+memo
+batchfile interact
+# This is not sophisticated enough at the moment:
+# phrtg

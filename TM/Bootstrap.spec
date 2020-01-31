@@ -14,9 +14,11 @@ SCRIPT = doBootstrapclt.sh cyg_nc.sh
 IDISTRIB = interact.sh cleanup.sh tmux_test.sh interact_tmux.sh
 DISTRIB = services
 
+Bootstrapalgo : Bootstrap.tma
 Bootstrapcol :
 Bootstrapsrvr :
 Bootstrapclt :
 Bootstrapdisp : display.tbl
+doit : Bootstrap.doit
 %%
 CXXFLAGS=-g

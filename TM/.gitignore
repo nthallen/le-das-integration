@@ -5,6 +5,7 @@ Bootstrapcol.o
 Bootstrapcoloui.o
 Bootstrapcmd.cc
 Bootstrapcmd.dat
+Bootstrapcmd.h
 Bootstrapsrvr.o
 Bootstrapsrvroui.cc
 Bootstrapsrvroui.o
@@ -16,6 +17,7 @@ Bootstrapdispnc.cc
 Bootstrapdispncoui.cc
 Bootstrapdispnc.o
 Bootstrapdispncoui.o
+doit.dep
 Bootstrapengext.cdf
 Bootstrapengextcdf.oui
 Bootstrapengextcdf.tmc
@@ -33,4 +35,5 @@ Bootstrapcol
 Bootstrapsrvr
 Bootstrapcltnc
 Bootstrapdispnc
+doit
 Bootstrapengext
