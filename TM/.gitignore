@@ -1,3 +1,8 @@
+Bootstrapalgoa.tmc
+Bootstrapalgo.cc
+Bootstrapalgooui.cc
+Bootstrapalgo.o
+Bootstrapalgooui.o
 Bootstrapcol.cc
 tm.dac
 Bootstrapcoloui.cc
@@ -31,6 +36,7 @@ displaytblnc.tmc.dep
 *.exe
 *.stackdump
 Makefile
+Bootstrapalgo
 Bootstrapcol
 Bootstrapsrvr
 Bootstrapcltnc
