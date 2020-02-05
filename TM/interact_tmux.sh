@@ -116,6 +116,7 @@ Launch      tm_gen Bootstrapcol -v
 Launch      cmd    Bootstrapsrvr -s Both -v
 Launch      -      driver -v
 Launch      -      tmdf
+Launch      -      Bootstrapalgo -v
 tmux select-window -t ancillary-window
 tmux split-window -t 0 -h 'less +F Bootstrap.log'
 msg "[DEBUG] Dispatch_nc: Bootstrapcltnc"
